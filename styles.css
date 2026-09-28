@@ -321,6 +321,13 @@ abbr[title] {
     color: var(--suave);
 }
 
+/* Las notas con imagen a la izquierda llevan el número a la derecha,
+   sobre su columna de texto */
+.nota.volteada::before {
+    left: auto;
+    right: 0;
+}
+
 /* Orden por defecto: imagen a la derecha, texto a la izquierda */
 .nota-texto {
     order: 1;
