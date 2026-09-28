@@ -666,12 +666,20 @@ abbr[title] {
     }
 
     .sumario {
-        gap: 14px;
+        gap: 20px;
+        /* En mobile el menú pasa a su propia fila centrada, debajo del membrete */
+        order: 3;
+        flex-basis: 100%;
+        justify-content: center;
+        padding-top: 10px;
+        border-top: 1px dashed var(--linea);
     }
 
     .membrete {
         font-size: 10px;
         letter-spacing: 0.12em;
+        flex-wrap: wrap;
+        row-gap: 12px;
     }
 
     .nota {
@@ -697,6 +705,19 @@ abbr[title] {
 
     .nota-enlaces {
         flex-wrap: wrap;
+    }
+}
+
+/* Pantallas muy angostas: achico un toque los márgenes y el menú para que entre sin cortarse */
+@media (max-width: 359px) {
+    .hero {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .sumario {
+        gap: 12px;
+        letter-spacing: 0.1em;
     }
 }
 
