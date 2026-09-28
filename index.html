@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ignacio Urbano — Portfolio · Web Development</title>
 
-    <!-- Tipografías: serif elegante para títulos, sans fina para metadatos -->
+    <!-- Tipografías del diario: serif para títulos, sans fina para los datos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -13,15 +13,13 @@
 </head>
 <body>
 
-    <!-- ============================================================
-         HERO — nameplate de diario (100vh)
-         ============================================================ -->
+    <!-- Portada (100vh) -->
     <header class="hero" id="hero">
 
-        <!-- Fondo con glow dorado, se mueve en parallax -->
+        <!-- Fondo: glow dorado que baja más lento que el scroll -->
         <div class="hero-bg" aria-hidden="true"></div>
 
-        <!-- Membrete / sumario -->
+        <!-- Membrete de arriba: lugar, índice y número de edición -->
         <div class="membrete">
             <p class="membrete-lugar">Rosario · 2026</p>
             <nav class="sumario">
@@ -33,7 +31,7 @@
             <p class="membrete-edicion">Edición N°1</p>
         </div>
 
-        <!-- Nameplate -->
+        <!-- El nombre, bien grande -->
         <div class="nameplate">
             <div class="linea-oro" aria-hidden="true"></div>
             <h1>Ignacio Urbano</h1>
@@ -42,7 +40,7 @@
             <p class="bajada-hero">Estudiante de desarrollo de software · Técnico en desarrollo web</p>
         </div>
 
-        <!-- Pie del hero: cintillo con las herramientas -->
+        <!-- Cintillo de abajo: la caja de herramientas -->
         <div class="cintillo">
             <p class="cintillo-titulo">Tecnologías adquiridas</p>
             <ul class="sellos">
@@ -60,9 +58,7 @@
         </div>
     </header>
 
-    <!-- ============================================================
-         SOBRE MÍ — columna de diario
-         ============================================================ -->
+    <!-- Sobre mí: la columna de letras -->
     <section class="seccion sobre-mi" id="sobre-mi">
         <div class="rotulo reveal">
             <p class="kicker">La pluma</p>
@@ -79,9 +75,7 @@
         </div>
     </section>
 
-    <!-- ============================================================
-         COMPETENCIAS — técnicas y blandas
-         ============================================================ -->
+    <!-- Competencias: técnicas y blandas -->
     <section class="seccion competencias" id="competencias">
         <div class="rotulo reveal">
             <p class="kicker">Competencias</p>
@@ -114,16 +108,14 @@
         </div>
     </section>
 
-    <!-- ============================================================
-         PROYECTOS — notas de tapa, layout alternado
-         ============================================================ -->
+    <!-- Proyectos: notas de tapa, alternadas izquierda/derecha -->
     <section class="seccion proyectos" id="proyectos">
         <div class="rotulo reveal">
             <p class="kicker">Archivo de proyectos</p>
             <h2>Notas de tapa</h2>
         </div>
 
-        <!-- NOTA 1 — imagen derecha -->
+        <!-- Nota 1 · imagen a la derecha -->
         <article class="nota reveal">
             <figure class="nota-multimedia">
                 <div class="marco">
@@ -151,7 +143,7 @@
             </div>
         </article>
 
-        <!-- NOTA 2 — imagen izquierda -->
+        <!-- Nota 2 · imagen a la izquierda -->
         <article class="nota volteada reveal">
             <figure class="nota-multimedia">
                 <div class="marco">
@@ -180,90 +172,37 @@
             </div>
         </article>
 
-        <!-- NOTA 3 — imagen derecha -->
+        <!-- Nota 3 · mi primer full stack, imagen a la derecha -->
         <article class="nota reveal">
             <figure class="nota-multimedia">
                 <div class="marco">
-                    <span class="placeholder">[ fotografía ]</span>
+                    <img src="images/finanzas.png" alt="Captura del dashboard de Finanzas Personales">
                 </div>
-                <figcaption>Dashboard de análisis en Streamlit</figcaption>
+                <figcaption>El dashboard en vivo — creado, deployado y probado de principio a fin</figcaption>
             </figure>
 
             <div class="nota-texto">
-                <p class="kicker">Datos · 2026</p>
-                <h3>Personal Finance Tracker</h3>
-                <p>Análisis de finanzas personales en Python: carga y limpieza de movimientos con pandas, dashboard interactivo con Streamlit y estimaciones con scikit-learn.</p>
-                <ul class="stack">
-                    <li>Python</li>
-                    <li>pandas</li>
-                    <li>Streamlit</li>
-                    <li>scikit-learn</li>
-                </ul>
-                <p class="nota-destaca">Evidencia: automatización del proceso de datos, de la carga cruda al análisis limpio.</p>
-                <div class="nota-enlaces">
-                    <a href="#">Ver código</a>
-                </div>
-            </div>
-        </article>
-
-        <!-- NOTA 4 — imagen izquierda -->
-        <article class="nota volteada reveal">
-            <figure class="nota-multimedia">
-                <div class="marco">
-                    <span class="placeholder">[ fotografía ]</span>
-                </div>
-                <figcaption>Interfaz de punto de venta</figcaption>
-            </figure>
-
-            <div class="nota-texto">
-                <p class="kicker">Aplicación · 2026</p>
-                <h3>Kiosco POS</h3>
-                <p>Punto de venta para kiosco desarrollado con React: soporte para múltiples métodos de pago, búsqueda rápida de productos y formato de moneda argentina.</p>
-                <ul class="stack">
-                    <li>React</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JS</li>
-                </ul>
-                <p class="nota-destaca">Evidencia: reglas de negocio de cobro, métodos de pago y moneda local.</p>
-                <div class="nota-enlaces">
-                    <a href="#">Ver código</a>
-                </div>
-            </div>
-        </article>
-
-        <!-- NOTA 5 — imagen derecha -->
-        <article class="nota reveal">
-            <figure class="nota-multimedia">
-                <div class="marco">
-                    <span class="placeholder">[ fotografía ]</span>
-                </div>
-                <figcaption>Finanzas Personales — demo en vivo</figcaption>
-            </figure>
-
-            <div class="nota-texto">
-                <p class="kicker">Aplicación · 2026</p>
+                <p class="kicker">Full stack · 2026</p>
                 <h3>Finanzas Personales</h3>
-                <p>Aplicación completa con autenticación por usuario, presupuestos por categoría (reglas de negocio), gráficos y exportación a CSV. API con FastAPI, base de datos SQL, y la experiencia pensada para el uso cotidiano.</p>
+                <p>Mi primera aplicación completa: backend con FastAPI y SQLite, validaciones con Pydantic, autenticación propia (passwords con PBKDF2 y sesiones por cookie) y un frontend vanilla con Chart.js. Ingresos y gastos, presupuestos por categoría con reglas de negocio reales (pasarte del límite enciende la alerta roja), gráficos, export a CSV y navegación por día, semana o mes. Vivo en mi servidor.</p>
                 <ul class="stack">
                     <li>FastAPI</li>
+                    <li>Python</li>
                     <li>SQLite</li>
                     <li>Pydantic</li>
                     <li>Chart.js</li>
                     <li>Auth</li>
                 </ul>
-                <p class="nota-destaca">Evidencia: automatización —33 tests sobre la API respaldan cada funcionalidad— y experiencia de usuario en cada pantalla.</p>
+                <p class="nota-destaca">Evidencia: 33 tests sobre la API (auth, presupuestos, CSV y aislamiento entre usuarios) respaldan cada pantalla; frontend, backend y base de datos servidos por un solo proceso.</p>
                 <div class="nota-enlaces">
-                    <a href="http://5.180.34.45:27272">Ver demo en vivo</a>
                     <a href="https://github.com/NachoUrbanoBJJ/Finanzas-App">Ver código</a>
+                    <a href="http://5.180.34.45:27272">Ver demo en vivo</a>
                 </div>
             </div>
         </article>
     </section>
 
-    <!-- ============================================================
-         CONTACTO — colofón del ejemplar
-         ============================================================ -->
+    <!-- Cierre: colofón con el contacto -->
     <footer class="seccion contacto" id="contacto">
         <div class="linea-oro ancha" aria-hidden="true"></div>
         <p class="kicker reveal">Correo de lectores</p>
@@ -277,7 +216,7 @@
         <p class="pie-nota">Fin del ejemplar · Construido en HTML, CSS y JavaScript</p>
     </footer>
 
-    <!-- Lightbox del certificado: se abre sobre la misma página -->
+    <!-- Lightbox del certificado (se abre sobre la página, sin cambiar de URL) -->
     <div class="lightbox" id="lightbox" aria-hidden="true">
         <button class="lightbox-cerrar" type="button" aria-label="Cerrar">&times;</button>
         <img src="" alt="Certificado de Diplomatura en Desarrollo Web — Coderhouse">

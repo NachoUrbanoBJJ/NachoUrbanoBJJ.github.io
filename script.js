@@ -1,25 +1,22 @@
-/* ============================================================
-   PORTFOLIO — Diario vintage
-   Comportamiento: parallax del hero + reveal de secciones
-   ============================================================ */
+/* Portafolio: parallax de la portada, aparición de bloques y lightbox del certificado */
 
-/* ---- Hero: parallax del glow dorado + fade al hacer scroll ---- */
+/* Portada: el glow baja más lento que el scroll y el hero se apaga al salir */
 (function () {
     const hero = document.getElementById("hero");
     const bg = document.querySelector(".hero-bg");
     if (!hero || !bg) return;
 
-    // Tope del hero (por si la página cambia de alto)
+    // Altura real del hero (por si el contenido cambia)
     const topeHero = () => hero.getBoundingClientRect().top + window.scrollY;
 
     function animar() {
         const y = window.scrollY;
 
-        // Fade: el hero se desvanece entre 0 y ~520px de scroll
+        // Entre 0 y ~520px de scroll el hero se difumina
         const opacidad = Math.max(0, 1 - y / 520);
         hero.style.opacity = opacidad.toFixed(3);
 
-        // Parallax: el glow se mueve más lento que el scroll
+        // El glow se mueve a media velocidad
         bg.style.transform = "translateY(" + y * 0.18 + "px)";
     }
 
@@ -27,11 +24,11 @@
     window.addEventListener("scroll", animar, { passive: true });
 })();
 
-/* ---- Scroll reveal: fade-in + slide en cada sección ---- */
+/* Cada bloque "reveal" entra con un fade suave cuando se asoma al viewport */
 (function () {
     const elementos = document.querySelectorAll(".reveal");
     if (!("IntersectionObserver" in window)) {
-        // Fallback: si el navegador no soporta el observer, mostramos todo
+        // Navegadores viejos: sin observer, se muestra todo de una
         elementos.forEach(function (el) {
             el.classList.add("visible");
         });
@@ -55,7 +52,7 @@
     });
 })();
 
-/* ---- Lightbox: certificado que se abre sobre la misma página ---- */
+/* Lightbox: abre el certificado sobre la misma página, sin cambiar de URL */
 (function () {
     const lightbox = document.getElementById("lightbox");
     if (!lightbox) return;
@@ -85,7 +82,7 @@
         });
     });
 
-    // Cierra con clic fuera de la imagen, la X o la tecla Escape
+    // Cerrar con clic en el fondo, la X o la tecla Escape
     lightbox.addEventListener("click", function (e) {
         if (e.target === lightbox || e.target === btnCerrar) cerrar();
     });

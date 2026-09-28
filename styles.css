@@ -1,7 +1,4 @@
-/* ============================================================
-   PORTFOLIO — Diario vintage elegante
-   Paleta: negro/carbón · dorado · blanco hueso
-   ============================================================ */
+/* Diario vintage · paleta: negro/carbón, dorado, blanco hueso */
 :root {
     --negro: #0d0d0d;          /* fondo del hero */
     --carbon: #16150f;         /* fondo de secciones */
@@ -34,7 +31,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Textura de papel sutil (moteado dorado muy leve) */
+/* Textura de papel: moteado dorado muy leve por encima de todo */
 body::after {
     content: "";
     position: fixed;
@@ -45,9 +42,7 @@ body::after {
     z-index: 1;
 }
 
-/* ============================================================
-   ELEMENTOS DE DIARIO REUTILIZABLES
-   ============================================================ */
+/* Piezas que se repiten por todo el diario */
 .linea-oro {
     height: 1px;
     width: min(460px, 72%);
@@ -90,9 +85,7 @@ body::after {
     padding: 90px 24px;
 }
 
-/* ============================================================
-   HERO — 100vh
-   ============================================================ */
+/* Portada (100vh) */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -104,7 +97,7 @@ body::after {
     will-change: opacity;
 }
 
-/* Glow dorado que hace parallax en scroll */
+/* Glow dorado de fondo: baja más lento que el scroll */
 .hero-bg {
     position: absolute;
     inset: -20%;
@@ -234,7 +227,7 @@ abbr[title] {
     text-decoration: none;
 }
 
-/* Burbuja con fondo blanco para el logo negro de ChatGPT */
+/* ChatGPT viene con el logo negro: le doy burbuja blanca */
 .sello-blanco {
     background: #ffffff;
     border-color: rgba(255, 255, 255, 0.85);
@@ -244,7 +237,7 @@ abbr[title] {
     border-color: var(--oro);
 }
 
-/* En burbujas blancas: sin redondeo que recorte el logo, centrado */
+/* Sin redondear en la burbuja blanca, así no recorta el logo */
 .sello-blanco img {
     width: 62%;
     height: 62%;
@@ -259,7 +252,7 @@ abbr[title] {
     transform: translateY(-3px);
 }
 
-/* Logo dentro del círculo: se ve entero, sin recortes */
+/* El logo llena el círculo sin recortarse */
 .sello img {
     width: 100%;
     height: 100%;
@@ -269,9 +262,7 @@ abbr[title] {
     display: block;
 }
 
-/* ============================================================
-   SOBRE MÍ — columna de diario
-   ============================================================ */
+/* Sobre mí */
 .sobre-mi {
     background-color: var(--carbon);
     border-top: 1px solid var(--linea);
@@ -302,9 +293,7 @@ abbr[title] {
     color: var(--oro);
 }
 
-/* ============================================================
-   PROYECTOS — notas de tapa alternadas
-   ============================================================ */
+/* Proyectos */
 .proyectos {
     background: linear-gradient(180deg, var(--negro) 0%, var(--carbon) 40%, var(--negro) 100%);
 }
@@ -371,7 +360,7 @@ abbr[title] {
     color: var(--suave);
 }
 
-/* Screenshot dentro del marco de la nota */
+/* La captura dentro del marco */
 .marco img {
     width: 100%;
     height: 100%;
@@ -389,7 +378,7 @@ abbr[title] {
     padding-bottom: 10px;
 }
 
-/* Columna de texto: arranca pasada la mitad vertical de la imagen */
+/* El texto baja para apoyarse contra la imagen */
 .nota-texto .kicker {
     margin-bottom: 10px;
 }
@@ -410,7 +399,7 @@ abbr[title] {
     max-width: 46ch;
 }
 
-/* Stack tecnológico, con filetes finos arriba y abajo */
+/* Stack de la nota, entre dos filetes */
 .stack {
     list-style: none;
     display: flex;
@@ -517,7 +506,7 @@ abbr[title] {
     color: var(--tinta);
 }
 
-/* Botón de certificado, en el estilo del portfolio */
+/* Botón de "ver diploma" */
 .btn-diploma {
     display: inline-block;
     margin-top: 14px;
@@ -538,9 +527,7 @@ abbr[title] {
     color: var(--carbon);
 }
 
-/* ============================================================
-   EVIDENCIA EN CADA PROYECTO
-   ============================================================ */
+/* La evidencia en cada nota */
 .nota-destaca {
     margin: 0 0 18px;
     padding-left: 14px;
@@ -551,9 +538,7 @@ abbr[title] {
     max-width: 44ch;
 }
 
-/* ============================================================
-   CONTACTO — colofón
-   ============================================================ */
+/* Contacto */
 .contacto {
     text-align: center;
     padding-bottom: 90px;
@@ -605,9 +590,7 @@ abbr[title] {
     color: var(--suave);
 }
 
-/* ============================================================
-   LIGHTBOX — certificado sin salir de la página
-   ============================================================ */
+/* Lightbox del certificado */
 .lightbox {
     position: fixed;
     inset: 0;
@@ -648,9 +631,7 @@ abbr[title] {
     color: var(--tinta);
 }
 
-/* ============================================================
-   SCROLL REVEAL — fade + slide suave
-   ============================================================ */
+/* Aparición de los bloques al hacer scroll */
 .reveal {
     opacity: 0;
     transform: translateY(34px);
@@ -662,9 +643,7 @@ abbr[title] {
     transform: translateY(0);
 }
 
-/* ============================================================
-   RESPONSIVE — mobile: se apila imagen arriba / texto abajo
-   ============================================================ */
+/* Pantallas chicas: todo se apila */
 @media (max-width: 860px) {
     body {
         font-size: 16px;
