@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignacio Urbano — Portfolio · Web Development</title>
+
+    <!-- Tipografías: serif elegante para títulos, sans fina para metadatos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ============================================================
+         HERO — nameplate de diario (100vh)
+         ============================================================ -->
+    <header class="hero" id="hero">
+
+        <!-- Fondo con glow dorado, se mueve en parallax -->
+        <div class="hero-bg" aria-hidden="true"></div>
+
+        <!-- Membrete / sumario -->
+        <div class="membrete">
+            <p class="membrete-lugar">Rosario · 2026</p>
+            <nav class="sumario">
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="#competencias">Competencias</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <p class="membrete-edicion">Edición N°1</p>
+        </div>
+
+        <!-- Nameplate -->
+        <div class="nameplate">
+            <div class="linea-oro" aria-hidden="true"></div>
+            <h1>Ignacio Urbano</h1>
+            <div class="linea-oro" aria-hidden="true"></div>
+            <p class="subtitulo">Full Stack Developer · Web Development</p>
+            <p class="bajada-hero">Estudiante de desarrollo de software · Técnico en desarrollo web</p>
+        </div>
+
+        <!-- Pie del hero: cintillo con las herramientas -->
+        <div class="cintillo">
+            <p class="cintillo-titulo">Tecnologías adquiridas</p>
+            <ul class="sellos">
+                <li><span class="sello" title="HTML"><img src="images/HTML.svg" alt="HTML"></span></li>
+                <li><span class="sello" title="CSS"><img src="images/CSS.svg" alt="CSS"></span></li>
+                <li><span class="sello" title="JavaScript"><img src="images/JS.svg" alt="JavaScript"></span></li>
+                <li><span class="sello" title="Node.js"><img src="images/NodeJS.svg" alt="Node.js"></span></li>
+                <li><span class="sello" title="SQL"><img src="images/SQL.svg" alt="SQL"></span></li>
+                <li><span class="sello" title="Git"><img src="images/git.svg" alt="Git"></span></li>
+                <li><span class="sello" title="GitHub"><img src="images/GH.svg" alt="GitHub"></span></li>
+                <li><span class="sello" title="Claude"><img src="images/claude.svg" alt="Claude"></span></li>
+                <li><span class="sello sello-blanco" title="ChatGPT"><img src="images/chatgpt.svg" alt="ChatGPT"></span></li>
+                <li><span class="sello" title="OpenCode"><img src="images/open.svg" alt="OpenCode"></span></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         SOBRE MÍ — columna de diario
+         ============================================================ -->
+    <section class="seccion sobre-mi" id="sobre-mi">
+        <div class="rotulo reveal">
+            <p class="kicker">La pluma</p>
+            <h2>Sobre mí</h2>
+        </div>
+
+        <div class="columna reveal">
+            <p class="capitular">D</p>
+            <p>esarrollador Full Stack, técnico en Desarrollo Web certificado y estudiante de Desarrollo de Software, enfocado en la creación de sistemas y aplicaciones web funcionales orientadas a resolver problemas reales.</p>
+            <p>Cuento con experiencia en frontend con HTML, CSS y JavaScript; backend con Python y FastAPI, trabajando también con SQL y SQLite. Manejo Git y GitHub para el control de versiones y los flujos de trabajo,  conocimientos en deploy de aplicaciones y sistemas web.</p>
+            <p>A través de mis proyectos trabajé con interfaces web, APIs, bases de datos y lógica de negocio, aplicando lógicas de ingeniería como ciclos de vida del software, metodologías ágiles e ingeniería de requisitos. Construyo aplicaciones desde cero y resuelvo los problemas de los clientes.</p>
+            <p>Me caracterizo por la atención al detalle, el enfoque en la resolución de problemas y el aprendizaje práctico y constante: me gusta entender cómo funcionan las herramientas que utilizo y convertir lo aprendido en proyectos reales.</p>
+            <p>Actualmente busco seguir creciendo profesionalmente, tanto formando parte de equipos de desarrollo como realizando proyectos para clientes.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         COMPETENCIAS — técnicas y blandas
+         ============================================================ -->
+    <section class="seccion competencias" id="competencias">
+        <div class="rotulo reveal">
+            <p class="kicker">Competencias</p>
+            <h2>Formación y habilidades</h2>
+        </div>
+
+        <div class="competencias-grid reveal">
+            <div class="competencia">
+                <p class="kicker">Técnicas</p>
+                <h3>Técnico Superior en Desarrollo de Software</h3>
+                <p class="subtitulo-cert">En curso · Iniciado en marzo de 2026</p>
+                <h3>Diplomatura en Desarrollo Web — Coderhouse</h3>
+                <a class="btn-diploma" href="images/Certificado Desarrollo web.png" data-lightbox>Ver diploma</a>
+                <h3>Idiomas</h3>
+                <p>Inglés — B2 · En formación hacia C1</p>
+                <p>Microsoft Excel / Google Sheets — Intermedio</p>
+            </div>
+
+            <div class="competencia">
+                <p class="kicker">Blandas</p>
+                <ul class="blandas">
+                    <li>Comunicación</li>
+                    <li>Resolución de problemas</li>
+                    <li>Pensamiento lógico</li>
+                    <li>Aprendizaje autodidacta</li>
+                    <li>Trabajo en equipo</li>
+                    <li>Adaptabilidad</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         PROYECTOS — notas de tapa, layout alternado
+         ============================================================ -->
+    <section class="seccion proyectos" id="proyectos">
+        <div class="rotulo reveal">
+            <p class="kicker">Archivo de proyectos</p>
+            <h2>Notas de tapa</h2>
+        </div>
+
+        <!-- NOTA 1 — imagen derecha -->
+        <article class="nota reveal">
+            <figure class="nota-multimedia">
+                <div class="marco">
+                    <img src="images/mundo-gamer.png" alt="Captura del e-commerce Mundo Gamer">
+                </div>
+                <figcaption>Mundo Gamer — del HTML a mano a la versión actual</figcaption>
+            </figure>
+
+            <div class="nota-texto">
+                <p class="kicker">Primer proyecto · 2025</p>
+                <h3>Mundo Gamer — E-commerce</h3>
+                <p>Mi primer proyecto, nacido en 2025 durante el curso de Coderhouse. Empecé con HTML a mano y Bootstrap; hoy está reconstruido con Astro, Sass y JavaScript: carrito real con localStorage, checkout simulado, accesibilidad y SEO cuidados.</p>
+                <ul class="stack">
+                    <li>Astro</li>
+                    <li>Sass</li>
+                    <li>TypeScript</li>
+                    <li>JavaScript</li>
+                    <li>Vercel</li>
+                </ul>
+                <p class="nota-destaca">Evidencia: un mismo proyecto llevado del HTML a mano a una arquitectura con componentes, mejorando código, accesibilidad y SEO.</p>
+                <div class="nota-enlaces">
+                    <a href="https://mundo-gamer-1.vercel.app">Ver demo en vivo</a>
+                    <a href="https://github.com/NachoUrbanoBJJ/mundo-gamer">Ver código</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- NOTA 2 — imagen izquierda -->
+        <article class="nota volteada reveal">
+            <figure class="nota-multimedia">
+                <div class="marco">
+                    <img src="images/ticket-inflacion.png" alt="Captura de la calculadora ¿Le ganaste a la inflación?">
+                </div>
+                <figcaption>El ticket en vivo — datos oficiales del INDEC</figcaption>
+            </figure>
+
+            <div class="nota-texto">
+                <p class="kicker">Calculadora · 2026</p>
+                <h3>¿Le ganaste a la inflación?</h3>
+                <p>Calculadora 100% frontend, sin frameworks ni build. Trae al día los datos oficiales del INDEC, aplica una regla de negocio auditable —aumento nominal contra inflación acumulada, con la fórmula documentada— y lo presenta como un ticket térmico: historial en localStorage, export a CSV en formato es-AR y descarga del ticket como imagen.</p>
+                <ul class="stack">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Datos INDEC</li>
+                    <li>Playwright</li>
+                    <li>Vercel</li>
+                </ul>
+                <p class="nota-destaca">Evidencia: datos oficiales en vivo, lógica de negocio documentada y pruebas automatizadas —102 asserts (unit + E2E) corriendo en CI ante cada cambio.</p>
+                <div class="nota-enlaces">
+                    <a href="https://ticket-inflacion.vercel.app">Ver demo en vivo</a>
+                    <a href="https://github.com/NachoUrbanoBJJ/Inflacion-vs-Sueldo">Ver código</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- NOTA 3 — imagen derecha -->
+        <article class="nota reveal">
+            <figure class="nota-multimedia">
+                <div class="marco">
+                    <span class="placeholder">[ fotografía ]</span>
+                </div>
+                <figcaption>Dashboard de análisis en Streamlit</figcaption>
+            </figure>
+
+            <div class="nota-texto">
+                <p class="kicker">Datos · 2026</p>
+                <h3>Personal Finance Tracker</h3>
+                <p>Análisis de finanzas personales en Python: carga y limpieza de movimientos con pandas, dashboard interactivo con Streamlit y estimaciones con scikit-learn.</p>
+                <ul class="stack">
+                    <li>Python</li>
+                    <li>pandas</li>
+                    <li>Streamlit</li>
+                    <li>scikit-learn</li>
+                </ul>
+                <p class="nota-destaca">Evidencia: automatización del proceso de datos, de la carga cruda al análisis limpio.</p>
+                <div class="nota-enlaces">
+                    <a href="#">Ver código</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- NOTA 4 — imagen izquierda -->
+        <article class="nota volteada reveal">
+            <figure class="nota-multimedia">
+                <div class="marco">
+                    <span class="placeholder">[ fotografía ]</span>
+                </div>
+                <figcaption>Interfaz de punto de venta</figcaption>
+            </figure>
+
+            <div class="nota-texto">
+                <p class="kicker">Aplicación · 2026</p>
+                <h3>Kiosco POS</h3>
+                <p>Punto de venta para kiosco desarrollado con React: soporte para múltiples métodos de pago, búsqueda rápida de productos y formato de moneda argentina.</p>
+                <ul class="stack">
+                    <li>React</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JS</li>
+                </ul>
+                <p class="nota-destaca">Evidencia: reglas de negocio de cobro, métodos de pago y moneda local.</p>
+                <div class="nota-enlaces">
+                    <a href="#">Ver código</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- NOTA 5 — imagen derecha -->
+        <article class="nota reveal">
+            <figure class="nota-multimedia">
+                <div class="marco">
+                    <span class="placeholder">[ fotografía ]</span>
+                </div>
+                <figcaption>Finanzas Personales — demo en vivo</figcaption>
+            </figure>
+
+            <div class="nota-texto">
+                <p class="kicker">Aplicación · 2026</p>
+                <h3>Finanzas Personales</h3>
+                <p>Aplicación completa con autenticación por usuario, presupuestos por categoría (reglas de negocio), gráficos y exportación a CSV. API con FastAPI, base de datos SQL, y la experiencia pensada para el uso cotidiano.</p>
+                <ul class="stack">
+                    <li>FastAPI</li>
+                    <li>SQLite</li>
+                    <li>Pydantic</li>
+                    <li>Chart.js</li>
+                    <li>Auth</li>
+                </ul>
+                <p class="nota-destaca">Evidencia: automatización —33 tests sobre la API respaldan cada funcionalidad— y experiencia de usuario en cada pantalla.</p>
+                <div class="nota-enlaces">
+                    <a href="http://5.180.34.45:27272">Ver demo en vivo</a>
+                    <a href="https://github.com/NachoUrbanoBJJ/Finanzas-App">Ver código</a>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- ============================================================
+         CONTACTO — colofón del ejemplar
+         ============================================================ -->
+    <footer class="seccion contacto" id="contacto">
+        <div class="linea-oro ancha" aria-hidden="true"></div>
+        <p class="kicker reveal">Correo de lectores</p>
+        <h2 class="reveal">Contacto</h2>
+        <p class="colofon reveal">¿Tenés un proyecto en mente o querés trabajar juntos? Escribime.</p>
+        <div class="contacto-links reveal">
+            <a href="mailto:tu@email.com">tu@email.com</a>
+            <a href="https://www.linkedin.com/in/tu-perfil">LinkedIn</a>
+            <a href="https://github.com/NachoUrbanoBJJ">GitHub</a>
+        </div>
+        <p class="pie-nota">Fin del ejemplar · Construido en HTML, CSS y JavaScript</p>
+    </footer>
+
+    <!-- Lightbox del certificado: se abre sobre la misma página -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox-cerrar" type="button" aria-label="Cerrar">&times;</button>
+        <img src="" alt="Certificado de Diplomatura en Desarrollo Web — Coderhouse">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

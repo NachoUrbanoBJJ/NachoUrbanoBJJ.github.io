@@ -1,0 +1,730 @@
+/* ============================================================
+   PORTFOLIO — Diario vintage elegante
+   Paleta: negro/carbón · dorado · blanco hueso
+   ============================================================ */
+:root {
+    --negro: #0d0d0d;          /* fondo del hero */
+    --carbon: #16150f;         /* fondo de secciones */
+    --tinta: #efe6d3;          /* blanco hueso (texto fuerte) */
+    --suave: #a89f8a;          /* texto secundario */
+    --oro: #c9a227;            /* acento dorado */
+    --linea: rgba(201, 162, 39, 0.22);  /* filetes finos */
+
+    --serif: "Playfair Display", Georgia, serif;
+    --cuerpo: "EB Garamond", Georgia, serif;
+    --sans: "Jost", "Segoe UI", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--negro);
+    color: var(--tinta);
+    font-family: var(--cuerpo);
+    font-size: 18px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Textura de papel sutil (moteado dorado muy leve) */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(rgba(201, 162, 39, 0.025) 1px, transparent 1px);
+    background-size: 4px 4px;
+    z-index: 1;
+}
+
+/* ============================================================
+   ELEMENTOS DE DIARIO REUTILIZABLES
+   ============================================================ */
+.linea-oro {
+    height: 1px;
+    width: min(460px, 72%);
+    margin: 0 auto;
+    background: linear-gradient(90deg, transparent, var(--oro), transparent);
+}
+
+.linea-oro.ancha {
+    width: min(720px, 90%);
+    margin-bottom: 46px;
+}
+
+.kicker {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--oro);
+}
+
+/* Encabezado de sección */
+.rotulo {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.rotulo h2 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-style: italic;
+    font-size: clamp(34px, 5vw, 52px);
+    margin-top: 8px;
+}
+
+.seccion {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 90px 24px;
+}
+
+/* ============================================================
+   HERO — 100vh
+   ============================================================ */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 26px 30px 34px;
+    will-change: opacity;
+}
+
+/* Glow dorado que hace parallax en scroll */
+.hero-bg {
+    position: absolute;
+    inset: -20%;
+    background:
+        radial-gradient(560px 380px at 25% 28%, rgba(201, 162, 39, 0.10), transparent 65%),
+        radial-gradient(640px 420px at 78% 62%, rgba(201, 162, 39, 0.06), transparent 68%);
+    will-change: transform;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Membrete superior */
+.membrete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--linea);
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--suave);
+}
+
+.sumario {
+    display: flex;
+    gap: 26px;
+}
+
+.sumario a {
+    color: var(--suave);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.sumario a:hover {
+    color: var(--oro);
+}
+
+/* Nameplate */
+.nameplate {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.nameplate h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-style: italic;
+    font-size: clamp(64px, 13vw, 150px);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: var(--oro);
+    text-shadow: 0 0 70px rgba(201, 162, 39, 0.30);
+    margin: 26px 0;
+    white-space: nowrap;
+}
+
+.subtitulo {
+    margin-top: 22px;
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--tinta);
+}
+
+.bajada-hero {
+    margin-top: 14px;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--suave);
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Pie del hero: cintillo de herramientas */
+.cintillo {
+    text-align: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--linea);
+}
+
+.cintillo-titulo {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--suave);
+    margin-bottom: 16px;
+}
+
+.sellos {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.sello {
+    width: 58px;
+    height: 58px;
+    border: 1px solid var(--linea);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--suave);
+    background: rgba(255, 255, 255, 0.02);
+    cursor: default;
+    transition: color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+abbr[title] {
+    text-decoration: none;
+}
+
+/* Burbuja con fondo blanco para el logo negro de ChatGPT */
+.sello-blanco {
+    background: #ffffff;
+    border-color: rgba(255, 255, 255, 0.85);
+}
+
+.sello-blanco:hover {
+    border-color: var(--oro);
+}
+
+/* En burbujas blancas: sin redondeo que recorte el logo, centrado */
+.sello-blanco img {
+    width: 62%;
+    height: 62%;
+    padding: 0;
+    border-radius: 0;
+    object-fit: contain;
+}
+
+.sello:hover {
+    color: var(--oro);
+    border-color: var(--oro);
+    transform: translateY(-3px);
+}
+
+/* Logo dentro del círculo: se ve entero, sin recortes */
+.sello img {
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    border-radius: 50%;
+    object-fit: contain;
+    display: block;
+}
+
+/* ============================================================
+   SOBRE MÍ — columna de diario
+   ============================================================ */
+.sobre-mi {
+    background-color: var(--carbon);
+    border-top: 1px solid var(--linea);
+}
+
+/* Columna al estilo impreso: ancho de lectura, centrada */
+.columna {
+    max-width: 620px;
+    margin: 0 auto;
+    font-size: 19px;
+    color: var(--tinta);
+}
+
+.columna p + p {
+    margin-top: 18px;
+    text-indent: 2.2em;
+}
+
+/* Drop cap: primera letra como en un diario impreso */
+.capitular {
+    float: left;
+    font-family: var(--serif);
+    font-weight: 700;
+    font-style: italic;
+    font-size: 78px;
+    line-height: 0.72;
+    padding: 12px 12px 0 0;
+    color: var(--oro);
+}
+
+/* ============================================================
+   PROYECTOS — notas de tapa alternadas
+   ============================================================ */
+.proyectos {
+    background: linear-gradient(180deg, var(--negro) 0%, var(--carbon) 40%, var(--negro) 100%);
+}
+
+/* Cada nota: 2 columnas. Número de índice arriba a la izquierda */
+.nota {
+    position: relative;
+    counter-increment: nota;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 46px;
+    align-items: start;
+    padding: 46px 0;
+    border-top: 1px solid var(--linea);
+}
+
+.nota::before {
+    content: "N°" counter(nota, decimal-leading-zero);
+    position: absolute;
+    top: 46px;
+    left: 0;
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--suave);
+}
+
+/* Orden por defecto: imagen a la derecha, texto a la izquierda */
+.nota-texto {
+    order: 1;
+    padding-top: 60px;
+}
+
+.nota-multimedia {
+    order: 2;
+    margin: 0;
+}
+
+/* Notas pares: imagen a la izquierda */
+.nota.volteada .nota-texto {
+    order: 2;
+}
+
+.nota.volteada .nota-multimedia {
+    order: 1;
+}
+
+/* Marco de la "fotografía" */
+.marco {
+    border: 1px solid var(--linea);
+    background:
+        repeating-linear-gradient(0deg, rgba(201, 162, 39, 0.02) 0 1px, transparent 1px 3px),
+        rgba(255, 255, 255, 0.015);
+    aspect-ratio: 4 / 3;
+    display: grid;
+    place-items: center;
+}
+
+.placeholder {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--suave);
+}
+
+/* Screenshot dentro del marco de la nota */
+.marco img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.nota-multimedia figcaption {
+    margin-top: 12px;
+    font-size: 14px;
+    font-style: italic;
+    text-align: right;
+    color: var(--suave);
+    border-bottom: 1px solid var(--linea);
+    padding-bottom: 10px;
+}
+
+/* Columna de texto: arranca pasada la mitad vertical de la imagen */
+.nota-texto .kicker {
+    margin-bottom: 10px;
+}
+
+.nota-texto h3 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-style: italic;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.1;
+    color: var(--oro);
+    margin-bottom: 16px;
+}
+
+.nota-texto p:not(.kicker) {
+    color: var(--suave);
+    font-size: 18px;
+    max-width: 46ch;
+}
+
+/* Stack tecnológico, con filetes finos arriba y abajo */
+.stack {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 26px;
+    margin: 20px 0;
+    padding: 12px 0;
+    border-top: 1px solid var(--linea);
+    border-bottom: 1px solid var(--linea);
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--tinta);
+    max-width: 46ch;
+}
+
+/* Enlaces de cada nota */
+.nota-enlaces {
+    display: flex;
+    gap: 28px;
+}
+
+.nota-enlaces a {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oro);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 3px;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.nota-enlaces a:hover {
+    border-bottom-color: var(--oro);
+    color: var(--tinta);
+}
+
+/* ============================================================
+   COMPETENCIAS — técnicas y blandas
+   ============================================================ */
+.competencias {
+    background-color: var(--carbon);
+    border-top: 1px solid var(--linea);
+    border-bottom: 1px solid var(--linea);
+}
+
+.competencias-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+}
+
+.competencia + .competencia {
+    border-left: 1px solid var(--linea);
+    padding-left: 40px;
+}
+
+.competencia .kicker {
+    margin-bottom: 8px;
+}
+
+.competencia h3 {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 23px;
+    color: var(--oro);
+    margin: 24px 0 6px;
+}
+
+.competencia h3:first-of-type {
+    margin-top: 0;
+}
+
+.competencia p:not(.kicker) {
+    color: var(--suave);
+    font-size: 16px;
+    max-width: 42ch;
+}
+
+.competencia p.subtitulo-cert {
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--oro);
+    max-width: none;
+}
+
+/* Lista de habilidades blandas, estilo diario */
+.blandas {
+    list-style: none;
+}
+
+.blandas li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--linea);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 19px;
+    color: var(--tinta);
+}
+
+/* Botón de certificado, en el estilo del portfolio */
+.btn-diploma {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 9px 18px;
+    border: 1px solid var(--oro);
+    border-radius: 3px;
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--oro);
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-diploma:hover {
+    background-color: var(--oro);
+    color: var(--carbon);
+}
+
+/* ============================================================
+   EVIDENCIA EN CADA PROYECTO
+   ============================================================ */
+.nota-destaca {
+    margin: 0 0 18px;
+    padding-left: 14px;
+    border-left: 1px solid var(--oro);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--oro);
+    max-width: 44ch;
+}
+
+/* ============================================================
+   CONTACTO — colofón
+   ============================================================ */
+.contacto {
+    text-align: center;
+    padding-bottom: 90px;
+}
+
+.contacto h2 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-style: italic;
+    font-size: clamp(34px, 5vw, 52px);
+}
+
+.colofon {
+    margin: 18px auto 34px;
+    max-width: 480px;
+    font-size: 19px;
+    font-style: italic;
+    color: var(--suave);
+}
+
+.contacto-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px 34px;
+    margin-bottom: 70px;
+}
+
+.contacto-links a {
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--oro);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 3px;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.contacto-links a:hover {
+    border-bottom-color: var(--oro);
+    color: var(--tinta);
+}
+
+.pie-nota {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--suave);
+}
+
+/* ============================================================
+   LIGHTBOX — certificado sin salir de la página
+   ============================================================ */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(8, 8, 6, 0.93);
+    padding: 40px;
+}
+
+.lightbox.abierto {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: min(90vw, 1000px);
+    max-height: 90vh;
+    object-fit: contain;
+    border: 1px solid var(--linea);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.65);
+}
+
+.lightbox-cerrar {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: var(--oro);
+    font-size: 36px;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.lightbox-cerrar:hover {
+    color: var(--tinta);
+}
+
+/* ============================================================
+   SCROLL REVEAL — fade + slide suave
+   ============================================================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(34px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================================
+   RESPONSIVE — mobile: se apila imagen arriba / texto abajo
+   ============================================================ */
+@media (max-width: 860px) {
+    body {
+        font-size: 16px;
+    }
+
+    .hero {
+        min-height: 100svh;
+        padding: 18px 18px 26px;
+    }
+
+    .nameplate h1 {
+        white-space: normal;
+    }
+
+    .sumario {
+        gap: 14px;
+    }
+
+    .membrete {
+        font-size: 10px;
+        letter-spacing: 0.12em;
+    }
+
+    .nota {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* En mobile todo se apila: foto arriba, texto abajo */
+    .nota-texto,
+    .nota.volteada .nota-texto,
+    .nota-multimedia,
+    .nota.volteada .nota-multimedia {
+        order: 0;
+    }
+
+    .nota-texto {
+        padding-top: 26px;
+    }
+
+    .nota::before {
+        top: 20px;
+    }
+
+    .nota-enlaces {
+        flex-wrap: wrap;
+    }
+}
+
+/* Competencias en mobile: se apilan con filete superior */
+@media (max-width: 860px) {
+    .competencias-grid {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    .competencia + .competencia {
+        border-left: none;
+        border-top: 1px solid var(--linea);
+        padding-left: 0;
+        padding-top: 26px;
+    }
+}
