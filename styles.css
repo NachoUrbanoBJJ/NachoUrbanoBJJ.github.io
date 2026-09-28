@@ -671,7 +671,7 @@ abbr[title] {
         order: 3;
         flex-basis: 100%;
         justify-content: center;
-        padding-top: 10px;
+        padding-top: 4px;
         border-top: 1px dashed var(--linea);
     }
 
@@ -679,7 +679,7 @@ abbr[title] {
         font-size: 10px;
         letter-spacing: 0.12em;
         flex-wrap: wrap;
-        row-gap: 12px;
+        row-gap: 6px;
     }
 
     .nota {
